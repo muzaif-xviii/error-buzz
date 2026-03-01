@@ -1,71 +1,73 @@
-# error-buzz README
+Error Buzz 🔔
 
-This is the README for your extension "error-buzz". After writing up a brief description, we recommend including the following sections.
+Error Buzz plays a custom sound whenever a terminal command fails in VS Code.
+
+No more silent errors.
+If your build fails — you’ll hear it.
+
+## ⬇ Download
+
+👉 https://github.com/muzaif-xviii/error-buzz/releases/latest
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+ Plays a sound when terminal exit code is non-zero
 
-For example if there is an image subfolder under your extension project workspace:
+ Select your own custom MP3 file
 
-\!\[feature X\]\(images/feature-x.png\)
+ Toggle ON/OFF from the status bar
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+ Lightweight and fast
+
+ Smart cooldown to prevent spam
+
+## How to Use
+
+Open Command Palette (Cmd + Shift + P)
+
+Run: Select Error Buzz Sound
+
+Choose your MP3 file
+
+Run a failing terminal command
+
+Click the status bar button to toggle anytime
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+macOS (uses native system audio player)
 
-## Extension Settings
+## Installation (Manual)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+ Download the .vsix file
+ Open VS Code
+ Go to Extensions
+ Click the ... menu
+ Select Install from VSIX
+ Choose the file
 
-For example:
+## Why I Built This
 
-This extension contributes the following settings:
+I got tired of silent terminal failures while multitasking.
+So I built a small tool to make errors impossible to ignore.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Built with:
 
-## Known Issues
+ TypeScript
+ VS Code Extension API
+ Node.js
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Version
+1.0.0
 
-## Release Notes
+Initial stable release
 
-Users appreciate release notes as you update your extension.
+ Custom sound picker
 
-### 1.0.0
+ Status bar toggle
 
-Initial release of ...
+ Exit code detection
 
-### 1.0.1
+👨‍💻 Author
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Built by Muzaif.

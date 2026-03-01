@@ -2,9 +2,9 @@
   "name": "error-buzz",
   "displayName": "error-buzz",
   "description": "",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
-  "vscode": "^1.108.0"
+  "vscode": "^1.109.0"
 },
   "categories": [
     "Other"
@@ -14,13 +14,27 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "error-buzz.helloWorld",
-        "title": "Hello World"
+  "commands": [
+    {
+      "command": "error-buzz.selectSound",
+      "title": "Select Error Buzz Sound"
+    },
+    {
+      "command": "error-buzz.toggle",
+      "title": "Toggle Error Buzz"
+    }
+  ],
+  "configuration": {
+    "title": "Error Buzz",
+    "properties": {
+      "errorBuzz.enabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable or disable error sound."
       }
-    ]
-  },
+    }
+  }
+},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -41,5 +55,11 @@
   },
   "dependencies": {
     "play-sound": "^1.1.6"
-  }
+  },
+  "publisher": "Coder-Z",
+
+  "repository": {
+  "type": "git",
+  "url": "https://https://github.com/muzaif-xviii/error-buzz"
+}
 }
