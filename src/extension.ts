@@ -7,16 +7,15 @@ const cooldown = 2000;
 
 export function activate(context: vscode.ExtensionContext) {
 
-    vscode.window.onDidCloseTerminal((terminal) => {
-        console.log('Terminal closed');
-    });
+    const disposable = vscode.window.onDidEndTerminalShellExecution((event) => {
 
-    vscode.window.onDidEndTerminalShellExecution((event: any) => {
+        if (!event || typeof event.exitCode !== 'number') {
+            return;
+        }
 
-        const exitCode = event.exitCode;
-		console.log("Terminal finished. Exit code:", event.exitCode);
+        console.log("Terminal finished. Exit code:", event.exitCode);
 
-        if (exitCode !== 0 && Date.now() - lastPlayed > cooldown) {
+        if (event.exitCode !== 0 && Date.now() - lastPlayed > cooldown) {
 
             const soundPath = path.join(
                 context.extensionPath,
@@ -24,13 +23,17 @@ export function activate(context: vscode.ExtensionContext) {
                 'faaah.mp3'
             );
 
-            player.play(soundPath, function (err: any) {
+            player.play(soundPath, (err: any) => {
                 if (err) {
-                    console.log('Sound error:', err);
+                    console.error("Sound error:", err);
                 }
             });
 
             lastPlayed = Date.now();
         }
     });
+
+    context.subscriptions.push(disposable);
 }
+
+export function deactivate() {}
